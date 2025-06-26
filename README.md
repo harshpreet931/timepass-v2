@@ -1,5 +1,7 @@
 # MERN E-Commerce Platform
 
+![Banner Image](assets/bannerImg.png)
+
 A full-featured e-commerce platform built with the MERN stack (MongoDB, Express, React, Node.js). This application provides a complete online shopping experience with separate dashboards for customers, merchants, and administrators.
 
 ## Features
@@ -28,6 +30,14 @@ A full-featured e-commerce platform built with the MERN stack (MongoDB, Express,
 - **Order Management:** Access and manage all orders.
 - **Support:** Handle support tickets and messages.
 - **Dashboard:** Comprehensive overview of the entire platform.
+
+## Screenshots
+
+![Screenshot 1](assets/Screenshot%202025-06-26%20at%2015.49.17.png)
+![Screenshot 2](assets/Screenshot%202025-06-26%20at%2015.51.16.png)
+![Screenshot 3](assets/Screenshot%202025-06-26%20at%2015.51.24.png)
+![Screenshot 4](assets/Screenshot%202025-06-26%20at%2015.52.03.png)
+![Screenshot 5](assets/Screenshot%202025-06-26%20at%2015.52.27.png)
 
 ## Tech Stack
 
