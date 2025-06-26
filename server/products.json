@@ -1,0 +1,35 @@
+[
+  {
+    "name": "T-Shirt",
+    "description": "A comfortable and stylish T-shirt.",
+    "sku": "TSHIRT001",
+    "price": 25.99,
+    "quantity": 100,
+    "taxable": true,
+    "isActive": true,
+    "imageUrl": "https://placekitten.com/400/400",
+    "imageKey": "t-shirt-001"
+  },
+  {
+    "name": "Jeans",
+    "description": "A classic pair of blue jeans.",
+    "sku": "JEANS001",
+    "price": 79.99,
+    "quantity": 50,
+    "taxable": true,
+    "isActive": true,
+    "imageUrl": "https://placekitten.com/400/401",
+    "imageKey": "jeans-001"
+  },
+  {
+    "name": "Sneakers",
+    "description": "A pair of comfortable and stylish sneakers.",
+    "sku": "SNEAKERS001",
+    "price": 129.99,
+    "quantity": 75,
+    "taxable": true,
+    "isActive": true,
+    "imageUrl": "https://placekitten.com/400/402",
+    "imageKey": "sneakers-001"
+  }
+]
