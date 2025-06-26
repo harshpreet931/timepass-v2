@@ -116,7 +116,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(NODE_ENV),
-        API_URL: JSON.stringify(API_URL)
+        API_URL: JSON.stringify(process.env.API_URL || 'https://timepass-v2-7bx1.vercel.app/api')
       }
     }),
     new HtmlWebpackPlugin({
