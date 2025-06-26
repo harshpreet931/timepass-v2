@@ -1,118 +1,248 @@
-# MERN Ecommerce
+# MERN E-Commerce Platform
 
-## Description
+A full-featured e-commerce platform built with the MERN stack (MongoDB, Express, React, Node.js). This application provides a complete online shopping experience with separate dashboards for customers, merchants, and administrators.
 
-An ecommerce store built with MERN stack, and utilizes third party API's. This ecommerce store enable three main different flows or implementations:
+## Features
 
-1. Buyers browse the store categories, products and brands
-2. Sellers or Merchants manage their own brand component
-3. Admins manage and control the entire store components 
+### Customer Features
+- **Product Browsing:** Browse products by category, brand, and price.
+- **Product Search:** Search for specific products.
+- **Product Details:** View detailed information about each product, including reviews.
+- **Shopping Cart:** Add products to a shopping cart and manage cart items.
+- **Wishlist:** Save products to a wishlist for future purchase.
+- **Checkout:** Secure checkout process with address management.
+- **Order History:** View past orders and their status.
+- **Account Management:** Manage personal information and security settings.
 
-### Features:
+### Merchant Features
+- **Product Management:** Add, edit, and delete products.
+- **Brand Management:** Add and manage product brands.
+- **Category Management:** Add and manage product categories.
+- **Order Management:** View and manage incoming orders.
+- **Dashboard:** View sales and performance metrics.
 
-  * Node provides the backend environment for this application
-  * Express middleware is used to handle requests, routes
-  * Mongoose schemas to model the application data
-  * React for displaying UI components
-  * Redux to manage application's state
-  * Redux Thunk middleware to handle asynchronous redux actions
+### Admin Features
+- **User Management:** Manage all users (customers and merchants).
+- **Merchant Management:** Approve or disable merchant accounts.
+- **Product Management:** Oversee all products on the platform.
+- **Order Management:** Access and manage all orders.
+- **Support:** Handle support tickets and messages.
+- **Dashboard:** Comprehensive overview of the entire platform.
 
-## Demo
+## Tech Stack
 
-This application is deployed on Vercel Please check it out :smile: [here](https://mern-store-gold.vercel.app).
+- **Frontend:**
+  - React
+  - Redux for state management
+  - Reactstrap for UI components
+  - SCSS for styling
+  - Webpack for bundling
 
-See admin dashboard [demo](https://mernstore-bucket.s3.us-east-2.amazonaws.com/admin.mp4)
+- **Backend:**
+  - Node.js
+  - Express.js for the server framework
+  - MongoDB for the database
+  - Mongoose for object data modeling
+  - JWT for authentication
+  - Passport.js for authentication strategies
 
-## Docker Guide
+- **Deployment:**
+  - Docker
+  - Nginx (for client-side routing)
 
-To run this project locally you can use docker compose provided in the repository. Here is a guide on how to run this project locally using docker compose.
+## Project Structure
 
-Clone the repository
+### Client (`/client`)
 ```
-git clone https://github.com/mohamedsamara/mern-ecommerce.git
-```
-
-Edit the dockercompose.yml file and update the the values for MONGO_URI and JWT_SECRET
-
-Then simply start the docker compose:
-
-```
-docker-compose build
-docker-compose up
-```
-
-## Database Seed
-
-* The seed command will create an admin user in the database
-* The email and password are passed with the command as arguments
-* Like below command, replace brackets with email and password. 
-* For more information, see code [here](server/utils/seed.js)
-
-```
-npm run seed:db [email-***@****.com] [password-******] // This is just an example.
-```
-
-## Install
-
-`npm install` in the project root will install dependencies in both `client` and `server`. [See package.json](package.json)
-
-Some basic Git commands are:
-
-```
-git clone https://github.com/mohamedsamara/mern-ecommerce.git
-cd project
-npm install
-```
-
-## ENV
-
-Create `.env` file for both client and server. See examples:
-
-[Frontend ENV](client/.env.example)
-
-[Backend ENV](server/.env.example)
-
-
-## Vercel Deployment
-
-Both frontend and backend are deployed on Vercel from the same repository. When deploying on Vercel, make sure to specifiy the root directory as `client` and `server` when importing the repository. See [client vercel.json](client/vercel.json) and [server vercel.json](server/vercel.json).
-
-## Start development
-
-```
-npm run dev
-```
-
-## Languages & tools
-
-- [Node](https://nodejs.org/en/)
-
-- [Express](https://expressjs.com/)
-
-- [Mongoose](https://mongoosejs.com/)
-
-- [React](https://reactjs.org/)
-
-- [Webpack](https://webpack.js.org/)
-
-
-### Code Formatter
-
-- Add a `.vscode` directory
-- Create a file `settings.json` inside `.vscode`
-- Install Prettier - Code formatter in VSCode
-- Add the following snippet:  
-
-```json
-
-    {
-      "editor.formatOnSave": true,
-      "prettier.singleQuote": true,
-      "prettier.arrowParens": "avoid",
-      "prettier.jsxSingleQuote": true,
-      "prettier.trailingComma": "none",
-      "javascript.preferences.quoteStyle": "single",
-    }
-
+/client
+├── app/
+│   ├── actions.js
+│   ├── components/
+│   │   ├── Common/
+│   │   ├── Manager/
+│   │   └── Store/
+│   ├── constants/
+│   ├── containers/
+│   │   ├── Account/
+│   │   ├── Authentication/
+│   │   ├── Brand/
+│   │   ├── Cart/
+│   │   ├── Category/
+│   │   ├── Contact/
+│   │   ├── Dashboard/
+│   │   ├── Homepage/
+│   │   ├── Login/
+│   │   ├── Merchant/
+│   │   ├── Navigation/
+│   │   ├── Order/
+│   │   ├── Product/
+│   │   ├── Review/
+│   │   ├── Shop/
+│   │   └── Support/
+│   ├── contexts/
+│   ├── reducers.js
+│   ├── store.js
+│   └── utils/
+├── public/
+│   ├── images/
+│   └── index.html
+├── styles/
+├── webpack/
+├── Dockerfile
+├── nginx.conf
+└── package.json
 ```
 
+### Server (`/server`)
+```
+/server
+├── config/
+├── enums/
+├── helpers/
+├── index.js
+├── models/
+│   ├── address.js
+│   ├── brand.js
+│   ├── cart.js
+│   ├── category.js
+│   ├── contact.js
+│   ├── newsletter.js
+│   ├── order.js
+│   ├── product.js
+│   ├── review.js
+│   ├── user.js
+│   └── wishlist.js
+├── routes/
+│   └── api/
+│       ├── address.js
+│       ├── auth.js
+│       ├── brand.js
+│       ├── cart.js
+│       ├── category.js
+│       ├── contact.js
+│       ├── merchant.js
+│       ├── newsletter.js
+│       ├── order.js
+│       ├── product.js
+│       ├── review.js
+│       ├── user.js
+│       └── wishlist.js
+├── services/
+├── socket/
+├── utils/
+└── package.json
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or later)
+- npm
+- MongoDB
+- Docker (optional, for containerized deployment)
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/mern-ecommerce.git
+   cd mern-ecommerce
+   ```
+
+2. **Install server dependencies:**
+   ```bash
+   cd server
+   npm install
+   ```
+
+3. **Install client dependencies:**
+   ```bash
+   cd ../client
+   npm install
+   ```
+
+4. **Set up environment variables:**
+   - In the `/server` directory, create a `.env` file by copying `.env.example`.
+   - Fill in the required environment variables, such as your MongoDB connection string and JWT secret.
+
+5. **Seed the database (optional):**
+   - To populate the database with initial data, run the seeder script:
+     ```bash
+     cd ../server
+     npm run seed
+     ```
+
+### Running the Application
+
+1. **Start the server:**
+   ```bash
+   cd server
+   npm start
+   ```
+   The server will run on `http://localhost:3000`.
+
+2. **Start the client:**
+   ```bash
+   cd ../client
+   npm start
+   ```
+   The client development server will run on `http://localhost:8080`.
+
+## API Endpoints
+
+The backend API provides the following RESTful endpoints:
+
+- `POST /api/auth/login` - User login
+- `POST /api/auth/register` - User registration
+- `GET /api/products` - Get all products
+- `GET /api/products/:slug` - Get a single product by slug
+- `POST /api/products` - Create a new product (merchant/admin only)
+- `PUT /api/products/:id` - Update a product (merchant/admin only)
+- `DELETE /api/products/:id` - Delete a product (merchant/admin only)
+- `GET /api/brands` - Get all brands
+- `GET /api/categories` - Get all categories
+- `POST /api/cart` - Add an item to the cart
+- `GET /api/cart` - Get cart items
+- `DELETE /api/cart/:id` - Remove an item from the cart
+- `POST /api/wishlist` - Add an item to the wishlist
+- `GET /api/wishlist` - Get wishlist items
+- `POST /api/orders` - Place a new order
+- `GET /api/orders` - Get user's orders
+- `GET /api/users` - Get all users (admin only)
+- `GET /api/users/:id` - Get a single user (admin only)
+- `PUT /api/users/:id` - Update a user (admin only)
+
+...and many more. Refer to the route files in `/server/routes/api/` for a complete list.
+
+## Environment Variables
+
+The following environment variables are required for the server to run:
+
+- `MONGO_URI`: Your MongoDB connection string.
+- `JWT_SECRET`: A secret key for signing JWTs.
+- `JWT_EXPIRATION`: JWT expiration time (e.g., `1h`).
+- `MAILGUN_KEY`: Your Mailgun API key (for sending emails).
+- `MAILGUN_DOMAIN`: Your Mailgun domain.
+- `MAILCHIMP_KEY`: Your Mailchimp API key (for newsletter subscriptions).
+- `MAILCHIMP_LIST_ID`: Your Mailchimp list ID.
+- `STRIPE_SECRET_KEY`: Your Stripe secret key (for payments).
+
+## Deployment
+
+This application is configured for deployment with Docker.
+
+1. **Build the Docker images:**
+   ```bash
+   docker-compose build
+   ```
+
+2. **Run the containers:**
+   ```bash
+   docker-compose up
+   ```
+
+The application will be available at `http://localhost:8080`.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
