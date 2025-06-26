@@ -20,7 +20,15 @@ app.use(
     frameguard: true
   })
 );
-app.use(cors());
+app.use(cors({
+  origin: [
+    process.env.CLIENT_URL,
+    'https://timepass-v2.vercel.app',
+    'https://timepass-v2-git-main-harshpreet931s-projects.vercel.app',
+    /\.vercel\.app$/
+  ],
+  credentials: true
+}));
 
 setupDB();
 require('./config/passport')(app);
